@@ -216,26 +216,14 @@ class TasksController extends Controller
         $parentTask=Task::find($task->parent_id);
         if($parentTask==null)
         {
+            return redirect('/');
+        }
         $task->content=$request->content;
         $task->deadline=$request->deadline;
         $task->status=$request->status;
         $task->memo=$request->memo;
         $task->save();
-        }
-        //$parentTask=Task::find($task->parent_id);
-            //$childtasks=Childtask::where('parent_id',$parentTask->id);
-            //$finishedChildTasks=$childtasks->where('status','完了');
-            
-            //if($finishedChildTasks->count()/$childtasks->count()==1)
-            //{
-                //$parentTask->status='完了';
-                //$parentTask->save();
-            //}
-            
-            
-        
-        
-            return redirect()->route('tasks.show',['id' => $task->parent_id]);   
+        return redirect()->route('tasks.show',['id' => $task->parent_id]);   
         
         
     }
