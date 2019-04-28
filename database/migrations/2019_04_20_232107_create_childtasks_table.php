@@ -22,6 +22,7 @@ class CreateChildtasksTable extends Migration
             $table->string('parent_id');
             
             $table->timestamps();
+            
         });
     }
 

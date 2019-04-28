@@ -18,6 +18,8 @@ class AddMemoToTasksTable extends Migration
             $table->integer('child_id')->nullable();
             $table->integer('parent_id')->nullable();
             $table->integer('added')->nullable();
+            
+            
         });
     }
 

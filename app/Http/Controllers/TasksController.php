@@ -198,35 +198,49 @@ class TasksController extends Controller
      public function editChildTask($id)
     {
             $task=ChildTask::find($id);
+            $parentTask=Task::find($task->parent_id);
             
+            if($parentTask==null)
+            {
+                return redirect('/');
+            
+            }
             return view('tasks.edit',[
                 'task'=>$task,
                 'parentTaskId' => $id
-                ]);
+                ]);    
     }
     
     public function updateChildTask(Request $request,$id){
-            $task=ChildTask::find($id);
-            $parentTask=Task::find($task->parent_id);
-            $childtasks=Childtask::where('parent_id',$parentTask->id);
-            $finishedChildTasks=$childtasks->where('status','完了');
+        $task=ChildTask::find($id);
+        $parentTask=Task::find($task->parent_id);
+        if($parentTask==null)
+        {
+        $task->content=$request->content;
+        $task->deadline=$request->deadline;
+        $task->status=$request->status;
+        $task->memo=$request->memo;
+        $task->save();
+        }
+        //$parentTask=Task::find($task->parent_id);
+            //$childtasks=Childtask::where('parent_id',$parentTask->id);
+            //$finishedChildTasks=$childtasks->where('status','完了');
             
             //if($finishedChildTasks->count()/$childtasks->count()==1)
             //{
                 //$parentTask->status='完了';
                 //$parentTask->save();
             //}
-            $task->content=$request->content;
-            $task->deadline=$request->deadline;
-            $task->status=$request->status;
-            $task->memo=$request->memo;
-            $task->save();
+            
+            
         
-        return redirect()->route('tasks.show',['id' => $task->parent_id]);
+        
+            return redirect()->route('tasks.show',['id' => $task->parent_id]);   
+        
         
     }
     
-    public function added(Request $request,$id) //$idの値はAddボタンを押したuserのid
+    public function added(Request $request,$id) //$idの値はAddボタンを押したタスクのid
     {
         if(\Auth::check()){
             
@@ -261,10 +275,18 @@ class TasksController extends Controller
     public function ShowChildTask($id)
     {
         $task=ChildTask::find($id);
+        $parentTask=Task::find($task->parent_id);
+        
+        if($parentTask==null)
+        {
+            return redirect('/');  
+        }
         
         return view('tasks.child_tasks.show',[
             'task'=>$task,
             ]);
+        
+        
             
     }
 }
