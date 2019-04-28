@@ -9,14 +9,21 @@
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
-                <li class="nav-item">{!! link_to_route('signup.get','Signup',[],['class'=>'nav-link']) !!}</li>
-                <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
-                <li class="nav-item dropdown" type="button" data-toggle="dropdown" aria-haspop="true" aria-expanded="false">Users</li>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>{!! link_to_route('tasks.create','Add Task',[],['class'=>'dropdown-item']) !!}</li>
-                        <li><a class="dropdown-item" href="#">logout</a></li>
-                        
-                    </div>
+                @if(Auth::check())
+                    <li class="nav-item">{!! link_to_route('users.index','Users',[],['class'=>'nav-link']) !!}</li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a> 
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="dropdown-item">{!! link_to_route('users.show','Mytasks',['user'=>Auth::user()],['class'=>'dropdown-item']) !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('tasks.create','Add Task',[],['class'=>'dropdown-item']) !!}</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item">{!! link_to_route('logout.get','Logout') !!}</li>
+                        </ul>
+        </div>
+                @else
+                    <li class="nav-item">{!! link_to_route('signup.get', 'Signup', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('login', 'Login', [], ['class' => 'nav-link']) !!}</li>
+                @endif
             </ul>
         </div>
     </nav>

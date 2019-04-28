@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model
+class ChildTask extends Model
 {
     protected $fillable=['content','user_id','status','deadline'];
     
@@ -14,12 +14,8 @@ class Task extends Model
     }
     
     public function parent(){
-        return $this->hasMany(Task::class);
-        
-    }
-    
-     public function child(){
         return $this->belongsTo(Task::class);
         
     }
+
 }

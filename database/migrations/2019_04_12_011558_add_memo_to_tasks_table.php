@@ -14,7 +14,10 @@ class AddMemoToTasksTable extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->string('memo');
+            $table->string('memo')->nullable();
+            $table->integer('child_id')->nullable();
+            $table->integer('parent_id')->nullable();
+            $table->integer('added')->nullable();
         });
     }
 
@@ -27,6 +30,8 @@ class AddMemoToTasksTable extends Migration
     {
         Schema::table('tasks', function (Blueprint $table) {
             $table->dropColumn('memo');
+            $table->dropColumn('child_id');
+            $table->dropColumn('added');
         });
     }
 }

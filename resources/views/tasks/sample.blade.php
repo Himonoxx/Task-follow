@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+{{ Html::style('/js/login.js') }}
+{{ Html::style('/css/login.css') }}
+{{ Html::style('/images/backphoto.jpg') }}
+
    <div class="cont_principal">
 
   <div class="cont_centrar">

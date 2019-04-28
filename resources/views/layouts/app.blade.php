@@ -6,8 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="./login.css">
-        <link rel="stylesheet" type="text/css" href="./index.css">
     </head>
 
     <body>
@@ -31,6 +29,7 @@
         <link rel="stylesheet" type="text/css" href="bootstrap-datepicker/css/bootstrap-datepicker.min.css">
         <script type="text/javascript" src="bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
         <script type="text/javascript" src="bootstrap-datepicker/locales/bootstrap-datepicker.ja.min.js"></script>
-        <script type="text/javascript" src=“./login.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.css">
     </body>
 </html>

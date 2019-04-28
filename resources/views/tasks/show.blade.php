@@ -1,42 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="row">
         <div class="card card-title text-light bg-info text-center col-sm-12">
             <h1>{{ $task->content }}</h1>
         </div>
-      <div class="row card">
-        <div class="d-flex mt-4">
-            <div class="col-sm-2 mt-1">
-              <h4>DeadLine:</h4>
-            </div>
-            <div class="col-sm-10">
-              {{ $task->deadline }}
-            </div>
+        <ul class="list-group list-group-flush col-sm-12">
+            <li class="list-group-item bg-light"><h4>DeadLine: {{ $task->deadline }}</h4></li>
+            <li class="list-group-item bg-light"><h4>Status: {{ $task->status }}</h4></li>
+            <li class="list-group-item bg-light"><h4>Memo: {{ $task->memo }}</h4></li>
+            <li class="list-group-item bg-light"><h4>達成度<div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="{{ $progress }}" aria-valuemin="0" aria-valuemax="100" style="{{ 'width:' . $progress . '%' }}">{{ $progress . '%' }}</div></h4></li>
+            <li class="list-group-item"><h4>
+                @include('tasks.child_tasks.child_tasks',['task'=>$task,'childTasks'=>$childTasks])
+          </h4>
+            @if($task->user_id == null || $task->user_id == Auth::user()->id)
+              <h4>{!! link_to_route('create.childtask','Create ChildTask',['id'=>$task->id],['class'=>'btn btn-light btn-block']) !!}</h4></li>
+            @endif
+        </ul>
+        <div class="col-sm-12">
+            @if($task->user_id == null || $task->user_id == Auth::user()->id)
+                <h3>{!! link_to_route('tasks.edit','Edit',['id'=>$task->id], ['class' => 'btn btn-secondary col-sm-12 mx-auto d-block mt-3']) !!}</h3>
+                @if($task->parent_id==null)
+                    {!! Form::model($task,['route'=>['tasks.destroy',$task->id],'method'=>'delete']) !!}
+                @else
+                    {!! Form::model($task,['route'=>['destroy.childtask',$task->id],'method'=>'delete']) !!}
+                @endif
+                <h3>{!! Form::submit('Delete',['class' => 'btn btn-danger col-sm-12 mx-auto d-block']) !!}</h3>
+                {!! Form::close() !!}
+            @endif    
         </div>
-      <div class="d-flex mt-4">
-        <div class="col-sm-2 mt-1">
-          <h4>Status:</h4>
-        </div>
-        <div class="col-sm-10">
-          {{ $task->status }}    
-        </div>
-      </div>
-        <div class="form-group d-flex mt-4">
-            <div class="col-sm-2 mt-1">
-                <h4>Memo:</h4>
-            </div>
-          <div class="col-sm-10 mx-auto">
-            <h4>{{ $task->memo }}</h4>
-          </div>
-        </div>
-        <h3>{!! link_to_route('tasks.edit','Edit',['id'=>$task->id], ['class' => 'btn btn-dark col-sm-11 mx-auto d-block mb-2']) !!}</h3>
-        {!! Form::model('route'=>['tasks.destroy',$task->id],'method'=>'delete']) !!}
-          <h3>{!! Form::submit('Delete',['class' => 'btn btn-dark col-sm-11 mx-auto d-block mb-2']) !!}</h3>
-        {!! Form::close() !!}
+    
+          
     </div>
-        </div>
-    </div>
-
 @endsection
