@@ -1,0 +1,79 @@
+.msr_bread06{
+  font-size: 14px;
+  letter-spacing: -.4em;
+}
+.msr_bread06 li{
+  margin:0 5px 5px 0;
+  background:#ddd;
+  color:#000;
+  line-height:100%;
+  letter-spacing: normal; 
+  display:inline-block;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+.msr_bread06 li:last-child{
+  padding:8px 12px 8px 18px;
+  color:#fff;
+  background:#000;
+}
+.msr_bread06 li a{
+  padding:8px 12px 8px 18px;
+  color:#000;
+  display:block;
+  text-decoration:none;
+  position:relative;
+  z-index:1;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+.msr_bread06 li:first-child a{
+  padding-left:12px;
+}
+
+/* 三角部分 */
+.msr_bread06 li a::before{
+  border: 14px solid transparent;
+  border-left: 14px solid #fff;
+  box-sizing: border-box;
+  content: "";
+  height: 28px;
+  width: 14px;
+  margin: -14px 0 0 0;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  z-index:2;
+}
+.msr_bread06 li a::after{
+  border: 8px solid transparent;
+  border-left: 8px solid #ddd;
+  box-sizing: border-box;
+  content: "";
+  height: 16px;
+  width: 8px;
+  margin: -8px 0 0 0;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  z-index:3;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+/* hover */
+.msr_bread06 li:hover{
+  background:#000;
+}
+.msr_bread06 a:hover{
+  color:#fff;
+}
+.msr_bread06 li a:hover::after{
+  border-left: 8px solid #000;
+}

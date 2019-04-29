@@ -1,6 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">
+  <ul class="msr_bread06 col-sm-12">
+    <li>
+        {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}    
+    </li>
+    @if(isset($parentTask))
+        <li>
+            {!! link_to_route('tasks.show',$parentTask->content,['id'=>$parentTask->id],['class'=>'']) !!}
+        </li>
+        <li>
+            新規作成
+        </li>
+    @else
+        <li>
+            新規作成
+        </li>
+        </ul>
+    @endif
+</div>
     <div class="row">
         <div class="card card-title text-light bg-dark text-center col-sm-12">
             @if(isset($parentTaskId))

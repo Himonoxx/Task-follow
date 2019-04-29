@@ -31,5 +31,6 @@
         <script type="text/javascript" src="bootstrap-datepicker/locales/bootstrap-datepicker.ja.min.js"></script>
         
         <link rel="stylesheet" href="/css/fonts.css">
+        <link rel="stylesheet" href="/css/pankuzu.css">
     </body>
 </html>

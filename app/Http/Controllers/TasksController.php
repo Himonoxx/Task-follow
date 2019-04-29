@@ -167,9 +167,12 @@ class TasksController extends Controller
     public function createChildTask($id) //$idは親タスクのid
     {
        $task=new ChildTask;
+       $parentTask=Task::find($id);
+       
         return view('tasks.create',[
             'task'=>$task,
-            'parentTaskId' => $id
+            'parentTaskId' => $id,
+            'parentTask'=>$parentTask,
         ]);
     }
     
@@ -207,7 +210,8 @@ class TasksController extends Controller
             }
             return view('tasks.edit',[
                 'task'=>$task,
-                'parentTaskId' => $id
+                'parentTaskId' => $id,
+                'parentTask'=>$parentTask,
                 ]);    
     }
     
@@ -272,9 +276,12 @@ class TasksController extends Controller
         
         return view('tasks.child_tasks.show',[
             'task'=>$task,
+            'parentTask'=>$parentTask,
             ]);
         
         
             
     }
+    
+    
 }

@@ -1,6 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">
+  <ul class="msr_bread06 col-sm-12">
+    <li>
+        {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}    
+    </li>
+    @if(isset($parentTask))
+        <li>
+            {!! link_to_route('tasks.show',$parentTask->content,['id'=>$parentTask->id],['class'=>'']) !!}
+        </li>
+        <li>
+            {!! link_to_route('show.childtask',$task->content,['id'=>$task->id],['class'=>'']) !!}
+        </li>
+        <li>
+            編集
+        </li>
+    @else
+        <li>
+            {!! link_to_route('tasks.show',$task->content,['id'=>$task->id],['class'=>'']) !!}
+        </li>
+        <li>
+            編集
+        </li>
+        </ul>
+    @endif
+</div>
   <div class="row">
         <div class="card card-title text-light bg-info text-center col-sm-12">
             @if($task->parent_id == null)

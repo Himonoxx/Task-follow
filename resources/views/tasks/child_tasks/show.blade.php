@@ -1,6 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">
+  <ul class="msr_bread06 col-sm-12">
+    <li>
+      {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}    
+    </li>
+    <li>
+      {!! link_to_route('tasks.show',$parentTask->content,['id'=>$parentTask->id],['class'=>'']) !!} 
+    </li>
+    <li>
+      {{ $task->content }}
+    </li>
+  </ul>
+</div>
     <div class="row">
         <div class="card card-title text-light bg-info text-center col-sm-12">
             <h1>{{ $task->content }}</h1>
