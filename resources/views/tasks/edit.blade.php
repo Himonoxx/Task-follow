@@ -3,25 +3,25 @@
 @section('content')
 <div class="row">
   <ul class="msr_bread06 col-sm-12">
-    <li>
-        {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}    
+    <li><b>
+        {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}</b>    
     </li>
     @if(isset($parentTask))
-        <li>
-            {!! link_to_route('tasks.show',$parentTask->content,['id'=>$parentTask->id],['class'=>'']) !!}
+        <li><b>
+            {!! link_to_route('tasks.show',$parentTask->content,['id'=>$parentTask->id],['class'=>'']) !!}</b>
         </li>
-        <li>
-            {!! link_to_route('show.childtask',$task->content,['id'=>$task->id],['class'=>'']) !!}
+        <li><b>
+            {!! link_to_route('show.childtask',$task->content,['id'=>$task->id],['class'=>'']) !!}</b>
         </li>
-        <li>
-            編集
+        <li><b>
+            編集</b>
         </li>
     @else
-        <li>
-            {!! link_to_route('tasks.show',$task->content,['id'=>$task->id],['class'=>'']) !!}
+        <li><b>
+            {!! link_to_route('tasks.show',$task->content,['id'=>$task->id],['class'=>'']) !!}</b>
         </li>
-        <li>
-            編集
+        <li><b>
+            編集</b>
         </li>
         </ul>
     @endif

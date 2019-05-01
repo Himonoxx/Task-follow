@@ -3,11 +3,11 @@
 @section('content')
 <div class="row">
   <ul class="msr_bread06 col-sm-12">
-    <li>
-      {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}    
+    <li><b>
+      {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}</b>    
     </li>
-    <li>
-      {{ $task->content }}
+    <li><b>
+      {{ $task->content }}</b>
     </li>
   </ul>
 </div>

@@ -3,20 +3,20 @@
 @section('content')
 <div class="row">
   <ul class="msr_bread06 col-sm-12">
-    <li>
-        {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}    
+    <li><b>
+        {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}</b>    
     </li>
     @if(isset($parentTask))
-        <li>
-            {!! link_to_route('tasks.show',$parentTask->content,['id'=>$parentTask->id],['class'=>'']) !!}
+        <li><b>
+            {!! link_to_route('tasks.show',$parentTask->content,['id'=>$parentTask->id],['class'=>'']) !!}</b>
         </li>
-        <li>
+        <li><b>
             新規作成
-        </li>
+        </b></li>
     @else
-        <li>
+        <li><b>
             新規作成
-        </li>
+        </b></li>
         </ul>
     @endif
 </div>

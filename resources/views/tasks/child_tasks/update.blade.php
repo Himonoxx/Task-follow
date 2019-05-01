@@ -3,17 +3,17 @@
 @section('content')
 <div class="row">
   <ul class="msr_bread06 col-sm-12">
-    <li>
-      {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}    
+    <li><b>
+      {!! link_to_route('tasks.index','Home',null,['class'=>'']) !!}</b>    
     </li>
-    <li>
-      {!! link_to_route('tasks.show',$parentTask->content,['id'=>$parentTask->id],['class'=>'']) !!} 
+    <li><b>
+      {!! link_to_route('tasks.show',$parentTask->content,['id'=>$parentTask->id],['class'=>'']) !!}</b> 
     </li>
-    <li>
-      {{ $task->content }}
+    <li><b>
+      {{ $task->content }}</b>
     </li>
-    <li>
-      編集
+    <li><b>
+      編集</b>
     </li>
   </ul>
 </div>
