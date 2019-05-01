@@ -17,11 +17,11 @@
                     仕事で人生が終わってしまうと危機感を感じている。</br>
                     そんな人の手助けになればいいなと思って作ったタスク管理アプリです。</p>
                   
-                        <div class="mx-auto button01 col-sm-5">
+                        <div class="mx-auto button01 col-sm-5 mt-2">
                             {!! link_to_route('login','Login >>',null,['class'=>'btn btn-info mx-auto btn-block rounded-pill']) !!}
                         </div>
             
-                        <div class="mx-auto button02 col-sm-5">
+                        <div class="mx-auto button02 col-sm-5 mt-2">
                             {!! link_to_route('signup.get','Signup >>',null,['class'=>'btn btn-outline-info mx-auto btn-block rounded-pill']) !!}
                         </div>
                     
