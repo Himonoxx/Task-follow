@@ -1,0 +1,9 @@
+body {
+  background: url(/images/tasktop-min.jpg) center center / cover no-repeat fixed;
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    background-image: url(/images/tasktop-min.jpg);
+  }
+}

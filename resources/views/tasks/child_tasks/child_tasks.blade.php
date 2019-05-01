@@ -8,10 +8,10 @@
             <th>Status</th>
         </thead>
         @foreach($childTasks as $childTask)
-            <tr class="table-info">
-                <td>{!! link_to_route('show.childtask',$childTask->content,[$childTask->id],['class'=>'text-dark']) !!}</td>
-                <td>{{$childTask->deadline}}</td>
-                <td>{{$childTask->status}}</td>
+            <tr class="table-info msr_table04">
+                <td><strong>{!! link_to_route('show.childtask',$childTask->content,[$childTask->id],['class'=>'text-dark']) !!}</strong></td>
+                <td><strong>{{$childTask->deadline}}</strong></td>
+                <td><strong>{{$childTask->status}}</strong></td>
             </tr>
         @endforeach
     </table>

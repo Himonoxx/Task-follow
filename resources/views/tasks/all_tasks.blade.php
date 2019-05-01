@@ -11,9 +11,9 @@
         </div>
         <div class="col-sm-12">
         @if(count($tasks)>0)
-            <table class="table thead-dark">
+            <table class="table table-responsive-sm table-hover">
                 <thead>
-                    <tr>
+                    <tr class="table-active text-light">
                         <th>Task</th>
                         <th>Deadline</th>
                         <th>Status</th>
@@ -23,22 +23,22 @@
                 </thead>
                 <tbody>
                     @foreach($tasks as $task)
-                    <tr>
-                        <td>{!! link_to_route('tasks.show',$task->content,['id'=>$task->id]) !!}</td>
-                        <td>{{ $task->deadline }}</td>
-                        <td>{{ $task->status }}</td>
+                    <tr class="table-info">
+                        <td><strong>{!! link_to_route('tasks.show',$task->content,['id'=>$task->id],['class'=>'text-dark']) !!}</strong></td>
+                        <td><strong>{{ $task->deadline }}</strong></td>
+                        <td><strong>{{ $task->status }}</strong></td>
                             @if($task->user_id==null)
                                 <td></td>
-                                <td>
+                                <td><strong>
                                 {!! Form::model($task, ['route' => ['added.tasks', $task->id], 'method' => 'post']) !!}
-                                {!! Form::submit('Add', ['class' => 'btn btn-sm btn-success']) !!}
-                                {!! Form::close() !!}
+                                {!! Form::submit('Add', ['class' => 'btn btn-sm btn-info mx-auto btn-block']) !!}
+                                {!! Form::close() !!}</strong>
                             @else
-                                <td class="text-danger">Occupied</td>
+                                <td class="text-danger"><strong>Occupied</strong></td>
                                     <td>
                                     @if($task->user_id == Auth::user()->id)
                                         {!! Form::model($task,['route'=>['un_added.tasks',$task->id],'method'=>'post']) !!}
-                                        {!! Form::submit('Release', ['class' => 'btn btn-sm btn-light']) !!}
+                                        {!! Form::submit('Release', ['class' => 'btn btn-sm btn-light mx-auto btn-block']) !!}
                                 @endif
                             @endif
                         </td>

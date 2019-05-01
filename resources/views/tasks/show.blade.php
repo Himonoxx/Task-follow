@@ -40,7 +40,6 @@
                 {!! Form::close() !!}
             @endif    
         </div>
-    
           
     </div>
 @endsection

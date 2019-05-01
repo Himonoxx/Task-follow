@@ -17,7 +17,7 @@
                             <li class="dropdown-item">{!! link_to_route('users.show','Mytasks',['user'=>Auth::user()],['class'=>'dropdown-item']) !!}</li>
                             <li class="dropdown-item">{!! link_to_route('tasks.create','Add Task',[],['class'=>'dropdown-item']) !!}</li>
                             <li class="dropdown-divider"></li>
-                            <li class="dropdown-item">{!! link_to_route('logout.get','Logout') !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('logout.get','Logout',null,['class'=>'dropdown-item']) !!}</li>
                         </ul>
         </div>
                 @else

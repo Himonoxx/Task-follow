@@ -1,7 +1,7 @@
 
     @if(count($users)>0)
-        <table class="table thead-dark">
-            <thead>
+        <table class="table table-active table-responsive-sm table-hover">
+            <thead class="text-light">
                 <tr>
                     <th>User Name</th>
                     <th>Tasks Count</th>
@@ -10,9 +10,9 @@
             </thead>
             <tbody>
                 @foreach($users as $user)
-                <tr>
-                    <td>{!! link_to_route('users.show',$user->name,['id'=>$user->id]) !!}</td>
-                    <td>{{ $user->tasks()->count() }}Tasks</td>
+                <tr class="table-info">
+                    <td><strong>{!! link_to_route('users.show',$user->name,['id'=>$user->id],['class'=>'text-dark']) !!}</strong></td>
+                    <td><strong>{{ $user->tasks()->count() }}Tasks</strong></td>
                     @if($user->tasks()->count()==0 || $user->tasks()->where('status','完了')->count()==0  )
                         <td><div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0">0%</div></td>

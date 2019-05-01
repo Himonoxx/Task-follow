@@ -19,10 +19,10 @@
             <h1>{{ $task->content }}</h1>
         </div>
         <ul class="list-group list-group-flush col-sm-12">
-            <li class="list-group-item bg-light"><h4>DeadLine: {{ $task->deadline }}</h4></li>
-            <li class="list-group-item bg-light"><h4>Status: {{ $task->status }}</h4></li>
-            <li class="list-group-item bg-light"><h4>Memo: {{ $task->memo }}</h4></li>
-            <li class="list-group-item"><h4>
+            <li class="list-group-item list-group-item-action list-group-item-info"><h4>DeadLine: {{ $task->deadline }}</h4></li>
+            <li class="list-group-item list-group-item-action list-group-item-info"><h4>Status: {{ $task->status }}</h4></li>
+            <li class="list-group-item list-group-item-action list-group-item-info"><h4>Memo: {{ $task->memo }}</h4></li>
+            <li class="list-group-item list-group-item-action list-group-item-info"><h4>
         <div class="col-sm-12">
           <h3>{!! link_to_route('edit.childtask','Edit',['id'=>$task->id], ['class' => 'btn btn-secondary col-sm-12 mx-auto d-block mt-3']) !!}</h3>
           {!! Form::model($task,['route'=>['destroy.childtask',$task->id],'method'=>'delete']) !!}

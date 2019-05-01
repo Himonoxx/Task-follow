@@ -32,5 +32,16 @@
         
         <link rel="stylesheet" href="/css/fonts.css">
         <link rel="stylesheet" href="/css/pankuzu.css">
+        <link rel="stylesheet" href="/css/button.css">
+        <link rel="stylesheet" href="/css/box.css">
+        <link rel="stylesheet" href="/css/bootstrap_buttonfont.css">
+        <link rel="stylesheet" href="/css/fullscreen.css">
+        <link rel="stylesheet" href="/css/top.css">
+        
+        
+        @include('layouts.index_css')
+        
+      
+        
     </body>
 </html>
