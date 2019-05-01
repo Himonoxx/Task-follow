@@ -6,7 +6,7 @@
   </ul>
 </div>    
     <div class="row">
-        <div class="card card-title text-light bg-info text-center col-sm-12">
+        <div class="card card-title text-light bg-dark text-center col-sm-12">
             <h1>All Tasks</h1>
         </div>
         <div class="col-sm-12">
