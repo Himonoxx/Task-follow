@@ -97,7 +97,7 @@
     
 }    
 
-@media screen and (max-device-height: 420px){
+@media screen and (max-height: 420px){
     
     h1{
         font-size:14px;
@@ -122,7 +122,7 @@
     
 }    
 
-@media screen and (max-device-height: 330px){
+@media screen and (max-height: 330px){
     
     h1{
         font-size:12px;
@@ -148,7 +148,7 @@
 }    
 
 
-@media screen and (min-device-height: 421px) and (max-device-height: 770px){
+@media screen and (min-height: 421px) and (max-height: 770px){
     
     
     .button02{
