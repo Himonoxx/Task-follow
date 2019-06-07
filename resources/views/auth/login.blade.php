@@ -22,7 +22,7 @@
                 {!! Form::submit('Log in', ['class' => 'btn btn-info btn-block']) !!}
             {!! Form::close() !!}
 
-            <p class="mt-2 text-dark">New user? {!! link_to_route('signup.get', 'Sign up now!') !!}</p>
+            <h5 class="mt-2 text-dark">New user? {!! link_to_route('signup.get', 'Sign up now!') !!}</h5>
         </div>
     </div>
 @endsection
