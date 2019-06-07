@@ -34,7 +34,7 @@
                                 {!! Form::submit('Add', ['class' => 'btn btn-sm btn-info mx-auto btn-block']) !!}
                                 {!! Form::close() !!}</strong>
                             @else
-                                <td class="text-danger"><strong>Occupied</strong></td>
+                                <td class="text-danger"><strong>{{ $users->find($task->user_id)->name }}</strong></td>
                                     <td>
                                     @if($task->user_id == Auth::user()->id)
                                         {!! Form::model($task,['route'=>['un_added.tasks',$task->id],'method'=>'post']) !!}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Task;
 use App\ChildTask;
+use App\User;
 
 class TasksController extends Controller
 {
@@ -17,9 +18,11 @@ class TasksController extends Controller
     public function index()
     {
         $tasks=Task::paginate(25);
+        $users=User::all();
         
         return view('tasks.index',[
             'tasks'=>$tasks,
+            'users'=>$users,
             ]);
     }
 
@@ -60,6 +63,8 @@ class TasksController extends Controller
         $task->deadline=$request->deadline;
         $task->memo=$request->memo;
         $task->save();
+        
+        
         
         return redirect('/');
         
@@ -237,28 +242,31 @@ class TasksController extends Controller
         if(\Auth::check()){
             
         $user=\Auth::user();
+        $check_user=User::find($user->id);
+        if($user == $check_user){
         
-        $task=Task::find($id);
-        $task->user_id=$user->id;
+        $task=Task::find($request->id);
+        $task->user_id=$check_user->id;
         $task->save();
         }
-        return redirect('/');
+        }
+        
+        return redirect()->route('tasks.index');
     }
     
     public function un_added(Request $request,$id)
     {
+        
         if(\Auth::check()){
             $auth_user=\Auth::user();
-            $user=Task::find($id)->user();
+            $user=User::find(Task::find($request->id));
+        
             
-            //if($auth_user == $user) //ここでログインユーザーと紐づいているユーザーが同一か確認する。
-            //{
-                $task=Task::find($id); 
-                $task->user_id=null;
-                $task->save();
-            //}
+            $task=Task::find($request->id); 
+            $task->user_id=null;
+            $task->save();
             
-            return redirect('/');
+            return redirect()->route('tasks.index');
             
         }
     }

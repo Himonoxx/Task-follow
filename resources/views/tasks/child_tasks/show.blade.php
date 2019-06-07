@@ -23,12 +23,16 @@
             <li class="list-group-item list-group-item-action list-group-item-info"><h4>Status: {{ $task->status }}</h4></li>
             <li class="list-group-item list-group-item-action list-group-item-info"><h4>Memo: {{ $task->memo }}</h4></li>
             <li class="list-group-item list-group-item-action list-group-item-info"><h4>
-        <div class="col-sm-12">
-          <h3>{!! link_to_route('edit.childtask','Edit',['id'=>$task->id], ['class' => 'btn btn-secondary col-sm-12 mx-auto d-block mt-3']) !!}</h3>
-          {!! Form::model($task,['route'=>['destroy.childtask',$task->id],'method'=>'delete']) !!}
-          <h3>{!! Form::submit('Delete',['class' => 'btn btn-danger col-sm-12 mx-auto d-block']) !!}</h3>
-          {!! Form::close() !!}
-        </div>
+              
+        @if($parentTask->user_id == Auth::user()->id)
+          <div class="col-sm-12">
+            <h3>{!! link_to_route('edit.childtask','Edit',['id'=>$task->id], ['class' => 'btn btn-secondary col-sm-12 mx-auto d-block mt-3']) !!}</h3>
+            {!! Form::model($task,['route'=>['destroy.childtask',$task->id],'method'=>'delete']) !!}
+            <h3>{!! Form::submit('Delete',['class' => 'btn btn-danger col-sm-12 mx-auto d-block']) !!}</h3>
+            {!! Form::close() !!}
+          </div>
+        @endif
+          </h4></li>
     
           
     </div>

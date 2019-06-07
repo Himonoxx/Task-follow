@@ -11,9 +11,9 @@
     @else
             <div class="row">
                 <div class="center-jumbotron">
-                    <div class="text-center"><h1>タスクに追われる毎日から卒業しませんか？</h1></div>
+                    <div class="text-center"><h1>タスクに追われる毎日から卒業しませんか？<br><br></h1></div>
             
-                    <p>毎日何かに追われて生きている。</br>
+                    <p class="massage">毎日何かに追われて生きている。</br>
                     仕事で人生が終わってしまうと危機感を感じている。</br>
                     そんな人の手助けになればいいなと思って作ったタスク管理アプリです。</p>
                   

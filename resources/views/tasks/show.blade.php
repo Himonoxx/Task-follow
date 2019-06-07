@@ -21,13 +21,16 @@
             <li class="list-group-item bg-light"><h4>Memo: {{ $task->memo }}</h4></li>
             <li class="list-group-item bg-light"><h4>達成度<div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="{{ $progress }}" aria-valuemin="0" aria-valuemax="100" style="{{ 'width:' . $progress . '%' }}">{{ $progress . '%' }}</div></h4></li>
-            <li class="list-group-item"><h4>
+        </ul>
+        <div class="col-sm-12">
+           <h4>
                 @include('tasks.child_tasks.child_tasks',['task'=>$task,'childTasks'=>$childTasks])
           </h4>
             @if($task->user_id == null || $task->user_id == Auth::user()->id)
               <h4>{!! link_to_route('create.childtask','Create ChildTask',['id'=>$task->id],['class'=>'btn btn-light btn-block']) !!}</h4></li>
             @endif
-        </ul>
+        </div>
+        
         <div class="col-sm-12">
             @if($task->user_id == null || $task->user_id == Auth::user()->id)
                 <h3>{!! link_to_route('tasks.edit','Edit',['id'=>$task->id], ['class' => 'btn btn-secondary col-sm-12 mx-auto d-block mt-3']) !!}</h3>
@@ -40,6 +43,6 @@
                 {!! Form::close() !!}
             @endif    
         </div>
-          
+        </div>
     </div>
 @endsection

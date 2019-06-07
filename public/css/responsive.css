@@ -1,0 +1,166 @@
+@media screen and (max-width: 350px){
+    h1{
+        font-size:10px;
+    }
+    
+    .massage{
+        font-size:10%;
+    }
+    
+    .button02{
+        margin:20px;
+    }
+    
+    .button01{
+        margin:20px;
+    }
+
+
+}
+@media screen and (min-width: 351px) and (max-width: 480px){
+    h1{
+        font-size:14px;
+    }
+    
+    .button02{
+        margin:20px;
+    }
+    
+    .button01{
+        margin:20px;
+    }
+    
+}
+
+@media screen and (min-width: 481px) and (max-width: 640px){
+    h1{
+        font-size:14px;
+    }
+    
+    
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px){
+    h1{
+        font-size:18px;
+    }
+    
+    .massage{
+        font-size:16px;
+    }
+    
+    
+    
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    h1{
+        font-size:24px;
+    }
+    
+    .massage{
+        font-size:20px;
+    }
+    
+    .button02{
+        height:22vh;
+    }
+    
+    .button01{
+        height:20vh;
+    }
+    
+    
+}
+@media screen and (min-width: 1025px){
+    
+    h1{
+        font-size:22px;
+        height:10vh;
+    }
+    
+    .massage{
+        font-size:18px;
+    }
+    
+    .button02{
+        height:10vh;
+    }
+    
+    .button01{
+        height:12vh;
+    }
+    
+    
+    
+    
+    
+}    
+
+@media screen and (max-device-height: 420px){
+    
+    h1{
+        font-size:14px;
+        height:10vh;
+    }
+    
+    .massage{
+        font-size:12px;
+    }
+    
+    .button02{
+        top:82vh;
+    }
+    
+    .button01{
+        top:70vh;
+    }
+    
+    
+    
+    
+    
+}    
+
+@media screen and (max-device-height: 330px){
+    
+    h1{
+        font-size:12px;
+        height:10vh;
+    }
+    
+    .massage{
+        font-size:10px;
+    }
+    
+    .button02{
+        top:84vh;
+    }
+    
+    .button01{
+        top:70vh;
+    }
+    
+    
+    
+    
+    
+}    
+
+
+@media screen and (min-device-height: 421px) and (max-device-height: 770px){
+    
+    
+    .button02{
+        top:75vh;
+    }
+    
+    .button01{
+        top:68vh;
+    }
+    
+    
+    
+    
+    
+}   

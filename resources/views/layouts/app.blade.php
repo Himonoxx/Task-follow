@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+        
     </head>
 
     <body>
@@ -36,10 +37,12 @@
         <link rel="stylesheet" href="/css/box.css">
         <link rel="stylesheet" href="/css/bootstrap_buttonfont.css">
         <link rel="stylesheet" href="/css/fullscreen.css">
+        
         <link rel="stylesheet" href="/css/top.css">
-        
-        
         @include('layouts.index_css')
+        
+        
+        
         
       
         

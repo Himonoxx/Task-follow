@@ -5,5 +5,7 @@
             @else
                 <link rel="stylesheet" href="/css/fadein.css">
                 <link rel="stylesheet" href="/css/font.css">
+                <link rel="stylesheet" href="/css/responsive.css">
+                
             @endif
 @endif
