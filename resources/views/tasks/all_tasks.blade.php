@@ -33,15 +33,19 @@
                                 {!! Form::model($task, ['route' => ['added.tasks', $task->id], 'method' => 'post']) !!}
                                 {!! Form::submit('Add', ['class' => 'btn btn-sm btn-info mx-auto btn-block']) !!}
                                 {!! Form::close() !!}</strong>
+                                </td>
                             @else
-                                <td class="text-danger"><strong>{{ $users->find($task->user_id)->name }}</strong></td>
-                                    <td>
-                                    @if($task->user_id == Auth::user()->id)
-                                        {!! Form::model($task,['route'=>['un_added.tasks',$task->id],'method'=>'post']) !!}
-                                        {!! Form::submit('Release', ['class' => 'btn btn-sm btn-light mx-auto btn-block']) !!}
+                                <td class="text-danger">
+                                    <strong>{{ $users->find($task->user_id)->name }}</strong>
+                                </td>
+                                <td>
+                                @if(Auth::user() == $users->find($task->user_id))
+                                    <strong>{!! Form::model($task,['route'=>['un_added.tasks',$task->id],'method'=>'post']) !!}
+                                    {!! Form::submit('Release', ['class' => 'btn btn-sm btn-light mx-auto btn-block']) !!}
+                                    {!! Form::close() !!}</strong>
                                 @endif
+                                 </td>
                             @endif
-                        </td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -1,5 +1,5 @@
 @media screen and (max-width: 350px){
-    h1{
+    .phrase{
         font-size:10px;
     }
     
@@ -18,7 +18,7 @@
 
 }
 @media screen and (min-width: 351px) and (max-width: 480px){
-    h1{
+    .phrase{
         font-size:14px;
     }
     
@@ -33,7 +33,7 @@
 }
 
 @media screen and (min-width: 481px) and (max-width: 640px){
-    h1{
+    .phrase{
         font-size:14px;
     }
     
@@ -41,7 +41,7 @@
 }
 
 @media screen and (min-width: 641px) and (max-width: 768px){
-    h1{
+    .phrase{
         font-size:18px;
     }
     
@@ -54,7 +54,7 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px){
-    h1{
+    .phrase{
         font-size:24px;
     }
     
@@ -74,7 +74,7 @@
 }
 @media screen and (min-width: 1025px){
     
-    h1{
+    .phrase{
         font-size:22px;
         height:10vh;
     }
@@ -99,7 +99,7 @@
 
 @media screen and (max-height: 420px){
     
-    h1{
+    .phrase{
         font-size:14px;
         height:10vh;
     }
@@ -124,7 +124,7 @@
 
 @media screen and (max-height: 330px){
     
-    h1{
+    .phrase{
         font-size:12px;
         height:10vh;
     }

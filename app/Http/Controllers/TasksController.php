@@ -240,18 +240,19 @@ class TasksController extends Controller
     public function added(Request $request,$id) //$idの値はAddボタンを押したタスクのid
     {
         if(\Auth::check()){
+        
             
         $user=\Auth::user();
         $check_user=User::find($user->id);
         if($user == $check_user){
         
-        $task=Task::find($request->id);
+        $task=Task::find($id);
         $task->user_id=$check_user->id;
         $task->save();
         }
         }
         
-        return redirect()->route('tasks.index');
+        return redirect('/');
     }
     
     public function un_added(Request $request,$id)
@@ -259,14 +260,13 @@ class TasksController extends Controller
         
         if(\Auth::check()){
             $auth_user=\Auth::user();
-            $user=User::find(Task::find($request->id));
         
             
             $task=Task::find($request->id); 
             $task->user_id=null;
             $task->save();
             
-            return redirect()->route('tasks.index');
+            return redirect('/');
             
         }
     }
